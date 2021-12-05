@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.getjson.databinding.ItemRowBinding
 
-class RVAdapter(private val prices: ArrayList<String>): RecyclerView.Adapter<RVAdapter.ItemViewHolder>() {
+class RVAdapter(private val cars: ArrayList<String>): RecyclerView.Adapter<RVAdapter.ItemViewHolder>() {
     class ItemViewHolder(val binding: ItemRowBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
@@ -13,12 +13,12 @@ class RVAdapter(private val prices: ArrayList<String>): RecyclerView.Adapter<RVA
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        val price = prices[position]
+        val car = cars[position]
 
         holder.binding.apply {
-            tvPrice.text = price
+            tvCarModel.text = car
         }
     }
 
-    override fun getItemCount() = prices.size
+    override fun getItemCount() = cars.size
 }
